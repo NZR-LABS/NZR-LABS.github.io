@@ -78,31 +78,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 const currentPage = currentPath.split('/').pop() || 'index.html';
                 const targetPage = path.split('/').pop() || '';
                 
-                // If it's a different page, navigate normally (browser will handle it)
-                if (path && path !== '' && targetPage !== '' && targetPage !== currentPage && !path.endsWith(currentPage)) {
-                    // Let browser handle navigation to different page
-                    return;
+                // If it's a different page (has a path and it's different from current), let browser handle it
+                if (path && path !== '' && targetPage !== '' && targetPage !== currentPage) {
+                    // Let browser handle navigation to different page - don't prevent default
+                    return true;
                 }
                 
-                // If it's the same page or just a hash, handle smooth scroll
+                // If it's the same page or just a hash (no path), handle smooth scroll
                 if (hash && hash !== '#') {
                     e.preventDefault();
-                    // Small delay to ensure page is loaded if navigating from another page
-                    setTimeout(() => {
-                        const target = document.querySelector(hash);
-                        if (target) {
-                            const headerHeight = 100;
-                            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                            window.scrollTo({
-                                top: Math.max(0, targetPosition),
-                                behavior: 'smooth'
-                            });
-                            // Update URL
-                            if (history.pushState) {
-                                history.pushState(null, null, hash);
-                            }
+                    const target = document.querySelector(hash);
+                    if (target) {
+                        const headerHeight = 100;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        window.scrollTo({
+                            top: Math.max(0, targetPosition),
+                            behavior: 'smooth'
+                        });
+                        // Update URL
+                        if (history.pushState) {
+                            history.pushState(null, null, hash);
                         }
-                    }, path && path !== '' ? 100 : 0);
+                    }
                 }
             }
         });
