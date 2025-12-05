@@ -112,22 +112,37 @@ document.addEventListener('DOMContentLoaded', function() {
     function scrollToHash() {
         const hash = window.location.hash;
         if (hash && hash !== '#') {
-            const target = document.querySelector(hash);
-            if (target) {
-                setTimeout(() => {
+            // Try multiple times in case page is still loading
+            let attempts = 0;
+            const maxAttempts = 10;
+            
+            const tryScroll = () => {
+                attempts++;
+                const target = document.querySelector(hash);
+                if (target) {
                     const headerHeight = 100;
                     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                     window.scrollTo({
                         top: Math.max(0, targetPosition),
                         behavior: 'smooth'
                     });
-                }, 200);
-            }
+                } else if (attempts < maxAttempts) {
+                    // Retry after a short delay if element not found yet
+                    setTimeout(tryScroll, 100);
+                }
+            };
+            
+            // Start trying immediately and also after page load
+            tryScroll();
+            setTimeout(tryScroll, 100);
+            setTimeout(tryScroll, 300);
+            setTimeout(tryScroll, 500);
         }
     }
     
-    // Handle hash on initial load
+    // Handle hash on initial load - multiple strategies
     if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', scrollToHash);
         window.addEventListener('load', scrollToHash);
     } else {
         scrollToHash();
@@ -135,4 +150,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle hash change (when clicking links on the same page)
     window.addEventListener('hashchange', scrollToHash);
+    
+    // Also handle when page becomes visible (for browser back/forward)
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            scrollToHash();
+        }
+    });
 });
