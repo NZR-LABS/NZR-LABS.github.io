@@ -277,6 +277,9 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 0.5rem;
     transition: var(--transition);
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
 }
 
 .btn-link-arrow:hover {
@@ -523,6 +526,8 @@ h1, h2, h3, h4, h5, h6 {
     mask-composite: exclude;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .glass-card:hover::before {
@@ -655,6 +660,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: auto;
     flex-wrap: wrap;
     gap: 0.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 :root.dark .service-footer {
