@@ -1,199 +1,263 @@
-# Prompt pour Cursor : Site NZR Labs
+# Prompt Cursor : Site NZR Labs - Design Premium
 
-## Contexte
-Créer un site vitrine professionnel pour NZR Labs, cabinet de conseil en cybersécurité. 
-Cible : PME traditionnelles (finance, industrie) + startups tech.
-Positionnement : Expertise technique + accessibilité business.
-
-## Stack technique recommandée
+## Stack Technique
 - **Framework** : Next.js 14 (App Router) + TypeScript
-- **Styling** : Tailwind CSS
-- **Animations** : Framer Motion (sobres)
-- **Formulaire** : React Hook Form + Zod
-- **Déploiement** : Vercel
-- **CMS** (optionnel blog) : Contentlayer ou MDX
+- **Styling** : Tailwind CSS v3.4
+- **Animations** : Framer Motion v11
+- **Icons** : Lucide React
+- **Forms** : React Hook Form + Zod
+- **Fonts** : Space Grotesk (display) + Inter (body) via next/font
 
-## Design system
+## Design System
 
-### Couleurs
-```css
-:root {
-  --primary: #1E3A8A;      /* Bleu marine */
-  --secondary: #10B981;    /* Vert émeraude */
-  --accent: #F59E0B;       /* Ambre */
-  --neutral: #F8FAFC;      /* Gris clair */
-  --text: #1E293B;         /* Anthracite */
+### Couleurs (Tailwind extend)
+```js
+colors: {
+  'bg-dark': '#0A0E27',
+  'bg-card': '#141B3A',
+  'primary': '#6366F1',
+  'primary-light': '#818CF8',
+  'secondary': '#10B981',
+  'accent': '#F59E0B',
+  'accent-pink': '#EC4899',
+  'text-primary': '#F8FAFC',
+  'text-secondary': '#94A3B8',
 }
 ```
 
-### Typographie
-- **Headings** : Inter Bold (ou Poppins)
-- **Body** : Inter Regular
-- **Code** (si snippets) : JetBrains Mono
+adapter couleurs white mode aussi.
 
-### Spacing
-- Mobile-first
-- Containers max-width : 1200px
-- Padding sections : py-20 (desktop), py-12 (mobile)
+### Typography
+- Display : Space Grotesk (headings, logo)
+- Body : Inter (paragraphes, UI)
+- Mono : JetBrains Mono (code, badges)
 
-## Structure des pages
+### Spacing & Layout
+- Container max-width : 1280px
+- Sections padding : py-24 (desktop), py-16 (mobile)
+- Card padding : p-8 (desktop), p-6 (mobile)
+- Gaps : gap-24 (sections), gap-8 (cards)
+
+## Pages Structure
 
 ### 1. Homepage (/)
-Composants à créer :
-- `<Hero />` : H1 + sous-titre + 2 CTAs + badges certifications
-- `<KeyNumbers />` : 3 statistiques en ligne (500+ labs, 2 certs, etc.)
-- `<ServicesPreview />` : 3 cards services (icône + titre + description courte + CTA)
-- `<PortfolioPreview />` : Grille 3 projets récents
-- `<BlogPreview />` : 3 derniers articles
-- `<FinalCTA />` : Section pleine largeur avec CTA contact
+Sections dans l'ordre :
+1. **Header** (sticky glass)
+2. **Hero** (full viewport, gradient mesh animé, 2 CTAs)
+3. **Stats** (4 cards glassmorphism en ligne)
+4. **Services** (grille bento 2x2 asymétrique)
+5. **Portfolio Preview** (grille 3 colonnes, 6 projets)
+6. **Methodology** (timeline avec icônes)
+7. **Blog Preview** (3 derniers articles)
+8. Final CTA (gradient background, form)
+9. Footer (4 colonnes)
+2. Services (/services)
 
-### 2. Services (/services)
-- Liste des 5 services
-- Chaque service : Card détaillée (description + méthodologie + durée + prix indicatif)
-- Section FAQ (5-10 questions)
+Hero section avec titre
+Grille 2x2 services détaillés (cards glassmorphism)
+FAQ accordion (6-8 questions)
+CTA section
 
-### 3. Portfolio (/portfolio)
-- Système de filtres (tags : web, infra, cloud, dfir)
-- Grille responsive de projets
-- Modal ou page dédiée par projet
+3. Portfolio (/portfolio)
 
-### 4. Blog (/blog)
-- Liste articles avec pagination
-- Card : image hero + titre + date + extrait + tags
-- Page article : MDX avec syntax highlighting
+Hero + filtres (tags cliquables)
+Grille masonry responsive (2-3 colonnes)
+Modal lightbox pour détails projet
+Pagination si >12 projets
 
-### 5. À propos (/about)
-- Section photo + bio
-- Timeline parcours (optionnel)
-- Valeurs & engagements
-- Certifications avec badges
+4. Blog (/blog)
 
-### 6. Contact (/contact)
-- Formulaire (validation Zod)
-- Coordonnées en sidebar
-- Carte (optionnel)
+Liste articles (grille 2-3 colonnes)
+Filtres par catégorie
+Pagination
+Sidebar : Top articles, Newsletter
 
-## Features techniques
+5. About (/about)
 
-### Accessibilité
-- Semantic HTML
-- ARIA labels
-- Contraste WCAG AA minimum
-- Navigation clavier
+Hero avec photo (glassmorphism frame)
+Timeline parcours (vertical scroll)
+Certifications badges animés
+Values cards (3 colonnes)
 
-### Performance
-- Images optimisées (next/image)
-- Lazy loading
-- Lighthouse score > 90
+6. Contact (/contact)
 
-### SEO
-- Metadata par page
-- Open Graph
-- Sitemap.xml
-- robots.txt
+Split layout : Form gauche, Info droite
+Form : Nom, Email, Service (dropdown), Message
+Validation Zod
+Success/error states
 
-### Animations (sobres)
-- Fade-in au scroll (Framer Motion)
-- Hover effects subtils sur cards
-- Pas d'animations distrayantes
+Composants Clés à Coder
+Header
+- Sticky avec backdrop-blur
+- Logo NZR (gradient bg)
+- Nav links (hover underline animation)
+- CTA button (gradient hover)
+- Mobile menu (slide-in drawer)
 
-## Ton & copywriting
-- Professionnel mais accessible
-- Phrases courtes et claires
-- Éviter jargon technique inutile
-- CTA directs : "Demander un audit", "Discutons de votre projet"
+Hero
+- Gradient mesh background (3 blobs animés)
+- Grid pattern overlay (opacity 10%)
+- Badge "Disponible" avec pulse
+- Title 3 lignes (gradient text)
+- Subtitle (text-secondary)
+- 2 buttons : Primary (gradient shadow) + Secondary (glass)
+- Trust badges en bas (3 cards glass)
+- Scroll indicator animé
 
-## Structure fichiers suggérée
+Service Card
+- Glassmorphism bg (bg-card, backdrop-blur)
+- Gradient border on hover
+- Icon gradient circle (16x16)
+- Title + description
+- Features list (checkmarks verts)
+- Price + CTA en footer
+- Hover : scale 1.02 + glow
+
+Portfolio Card
+- Image avec overlay gradient
+- Tags overlay (top-left)
+- Content : Title, description (line-clamp-2)
+- Metrics : Durée, Vulns found
+- CTA "Voir writeup" avec arrow
+- Hover : image scale 1.1, border glow
+
+Blog Card
+- Gradient border animé (opacity 20% → 100%)
+- Image cover avec gradient overlay
+- Category badge
+- Meta : Date, read time
+- Title (hover color change)
+- Description (line-clamp-3)
+- CTA "Lire" avec arrow
+
+- Animations Framer Motion
+Scroll Animations
+
+Fade in from bottom : initial={{ opacity: 0, y: 50 }} → whileInView={{ opacity: 1, y: 0 }}
+Stagger children : delay 0.1s entre cards
+Viewport : once: true (pas de repeat)
+
+Hover Effects
+
+Cards : whileHover={{ scale: 1.02 }}
+Buttons : whileHover={{ scale: 1.05 }} + whileTap={{ scale: 0.95 }}
+Images : scale parent + transition={{ type: "spring" }}
+
+Background Animations
+
+Gradient blobs : keyframe blob (7s infinite)
+Pulse badge : animate-ping + static dot
+Scroll indicator : animate-bounce
+
+Features Spéciales
+Glassmorphism Effect
+bg-bg-card backdrop-blur-xl border border-white/10
+
+Gradient Text
+bg-gradient-to-r from-white via-primary-light to-accent-pink 
+bg-clip-text text-transparent
+
+Gradient Border Hover
+<div className="relative group">
+  <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent-pink 
+       rounded-2xl opacity-0 group-hover:opacity-100 transition blur"></div>
+  <div className="relative bg-bg-card ...">Content</div>
+</div>
+
+Grid Pattern Overlay
+<div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+```
+(Créer grid.svg : grille subtile 20x20px)
+
+## Responsive Breakpoints
+- Mobile : < 768px (stack tout)
+- Tablet : 768-1024px (grille 2 colonnes)
+- Desktop : > 1024px (grille 3-4 colonnes)
+
+## Performance
+- Images : next/image avec priority sur hero
+- Lazy load composants below fold
+- Dynamic imports pour heavy components (charts, etc.)
+- Optimiser fonts (subset, display: swap)
+
+## Accessibilité
+- Semantic HTML (header, nav, main, section, footer)
+- ARIA labels sur interactive elements
+- Focus visible states (ring-2 ring-primary)
+- Keyboard navigation (Tab, Enter, Esc)
+- Color contrast WCAG AA (vérifié avec tools)
+
+## Structure Fichiers
 ```
 /app
   /(routes)
-    /page.tsx (homepage)
-    /services/page.tsx
-    /portfolio/page.tsx
-    /blog/page.tsx
-    /about/page.tsx
-    /contact/page.tsx
+    page.tsx                 # Homepage
+    services/page.tsx
+    portfolio/page.tsx
+    blog/page.tsx
+    about/page.tsx
+    contact/page.tsx
+  layout.tsx                 # Root layout
+  globals.css                # Tailwind + custom styles
 /components
-  /ui (buttons, cards, inputs...)
-  /sections (Hero, Services, Portfolio...)
-  /layout (Header, Footer)
-/lib (utils, validations)
-/public/images
-/content (MDX articles si blog)
+  /layout
+    Header.tsx
+    Footer.tsx
+  /sections
+    Hero.tsx
+    Services.tsx
+    Portfolio.tsx
+    Blog.tsx
+    FinalCTA.tsx
+  /ui
+    Button.tsx
+    Card.tsx
+    Badge.tsx
+    Input.tsx
+/lib
+  utils.ts
+  validations.ts
+/public
+  /images
+  /icons
+  grid.svg
 ```
 
-## Exemples de composants à coder
+## Spécificités Design
 
-### Hero
-```tsx
-<section className="bg-gradient-to-br from-primary to-primary/80 text-white py-20">
-  <div className="container mx-auto px-4">
-    <h1 className="text-5xl font-bold mb-4">
-      Protégez votre entreprise contre les cybermenaces
-    </h1>
-    <p className="text-xl mb-8">
-      Tests d'intrusion • Audits de conformité • Réponse à incident
-    </p>
-    <div className="flex gap-4">
-      <Button variant="secondary">Demander un audit</Button>
-      <Button variant="outline">Nos services</Button>
-    </div>
-    <div className="flex gap-4 mt-8">
-      <Badge>OSCP en cours</Badge>
-      <Badge>RC Pro 1M€</Badge>
-      <Badge>RGPD compliant</Badge>
-    </div>
-  </div>
-</section>
-```
+### Priorité Visuelle
+1. **Hero** : Wow effect immédiat (gradient mesh + typo bold)
+2. **Services** : Lisibilité (cards claires, pricing visible)
+3. **Portfolio** : Visual (images grandes, hover effects)
+4. **Blog** : Scannabilité (gradient borders, meta visible)
 
-### ServiceCard
-```tsx
-<div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
-  <Icon className="w-12 h-12 text-primary mb-4" />
-  <h3 className="text-2xl font-bold mb-2">{title}</h3>
-  <p className="text-gray-600 mb-4">{description}</p>
-  <ul className="space-y-2 mb-6">
-    {features.map(f => <li key={f}>✓ {f}</li>)}
-  </ul>
-  <div className="flex justify-between items-center">
-    <span className="text-sm text-gray-500">{duration}</span>
-    <span className="font-bold text-primary">{price}</span>
-  </div>
-  <Button className="w-full mt-4">En savoir plus</Button>
-</div>
-```
+### Tone of Voice (UI copy)
+- Headings : Assertifs, directs ("Sécurisez votre infra")
+- Descriptions : Clairs, bénéfices ("Rapport actionnable en 48h")
+- CTAs : Impératifs, valeur ("Demander audit gratuit")
+- Pas de jargon inutile, vulgariser si technique
 
-## Instructions de génération
+### Mood Board
+- Référence : HackerOne (clean), Cobalt (gradients), Synack (dark élégant)
+- Éviter : Matrix (trop cliché), Noir pur (trop sombre), Neon aggressive
 
-1. Initialiser projet Next.js 14 + TypeScript + Tailwind
-2. Créer design system (colors, typography dans globals.css)
-3. Développer composants UI réutilisables (Button, Card, Badge...)
-4. Coder sections homepage une par une
-5. Implémenter pages secondaires
-6. Intégrer formulaire contact avec validation
-7. Ajouter animations Framer Motion (subtiles)
-8. Optimiser images et performances
-9. Tester responsive mobile/tablet/desktop
-10. Setup déploiement Vercel
+## Livrables Attendus
+1. Site fonctionnel déployé sur Vercel
+2. Code TypeScript strict (pas de any)
+3. Components réutilisables et documentés
+4. README avec setup instructions
+5. Lighthouse score > 90 (Performance, A11y, SEO)
+6. Responsive testé sur 3 devices minimum
 
-## Contraintes importantes
-- ❌ Pas de fond noir "hacker"
-- ❌ Pas d'animations agressives
-- ❌ Pas de stock photos génériques
-- ✅ Design épuré et professionnel
-- ✅ Contenu clair et rassurant
-- ✅ CTAs visibles mais pas intrusifs
-
-## Livrables attendus
-- Site fonctionnel déployé
-- Code commenté et propre
-- README avec instructions
-- Fichiers de contenu éditables (services, projets)
+## Notes Importantes
+- White mode par defaut, Dark mode toggle
+- Tous les textes en français
+- Pas de lorem ipsum, utiliser vrais contenus
+- Optimiser pour conversion (CTAs visibles, friction minimale)
+- Tester formulaire contact avec validation
 
 ---
 
-**Objectif final** : Un site qui inspire confiance aux PME traditionnelles tout en démontrant l'expertise technique aux startups tech.
+**Objectif** : Un site qui fait dire "wow" aux tech, et "sérieux" aux tradi. 
+White mode et Dark mode élégant, animations subtiles, contenu clair. 🚀
 ```
-
----
