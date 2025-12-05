@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,178 +8,129 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <!-- Header -->
+    <header class="header" id="header">
         <nav class="nav container">
             <div class="nav-brand">
-                <a href="/" class="logo">NZR Labs</a>
+                <a href="/" class="logo">
+                    <span class="logo-gradient">NZR</span> Labs
+                </a>
             </div>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" id="navToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-menu">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/portfolio.html">Portfolio</a></li>
-                <li><a href="/blog.html">Blog</a></li>
-                <li><a href="/about.html">À propos</a></li>
-                <li><a href="/contact.html" class="btn btn-primary">Contact</a></li>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                <li><a href="/services.html" class="nav-link">Services</a></li>
+                <li><a href="/portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="/blog.html" class="nav-link">Blog</a></li>
+                <li><a href="/about.html" class="nav-link">À propos</a></li>
+                <li><a href="/contact.html" class="btn btn-primary-nav">Contact</a></li>
             </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="grid-pattern"></div>
+        </div>
         <div class="container">
-            <div class="hero-content fade-in">
-                <h1 class="hero-title">Blog</h1>
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Blog</span>
+                </h1>
                 <p class="hero-subtitle">Actualités et conseils en cybersécurité</p>
             </div>
         </div>
     </section>
 
-    <section class="blog-list">
+    <!-- Blog Section -->
+    <section class="portfolio-section">
         <div class="container">
-            <article class="blog-post fade-in" id="article-1">
-                <div class="blog-post-header">
-                    <div class="blog-post-date">15 Janvier 2024</div>
-                    <h2 class="blog-post-title">Les 5 erreurs de sécurité les plus courantes en 2024</h2>
-                    <p class="blog-post-excerpt">
-                        Après avoir audité des centaines d'entreprises cette année, nous avons identifié les erreurs de sécurité 
-                        les plus fréquentes que nous observons chez nos clients. Découvrez ces pièges courants et comment les éviter 
-                        pour protéger efficacement votre entreprise contre les cybermenaces.
-                    </p>
-                </div>
-                <div class="blog-post-footer">
-                    <div class="blog-tags">
-                        <span class="tag">Sécurité</span>
-                        <span class="tag">Conseils</span>
-                        <span class="tag">Best Practices</span>
+            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <article class="blog-post glass-card fade-in-up">
+                    <div class="portfolio-image" style="margin-bottom: 1.5rem;">
+                        <div class="portfolio-overlay"></div>
+                        <div class="portfolio-tags" style="top: 1rem; left: 1rem;">
+                            <span class="tag">Sécurité</span>
+                            <span class="tag">Conseils</span>
+                        </div>
                     </div>
-                    <a href="#article-1" class="btn btn-link">Lire l'article →</a>
-                </div>
-            </article>
-
-            <article class="blog-post fade-in" id="article-2">
-                <div class="blog-post-header">
-                    <div class="blog-post-date">8 Janvier 2024</div>
-                    <h2 class="blog-post-title">RGPD : Guide pratique pour les PME</h2>
-                    <p class="blog-post-excerpt">
-                        Le RGPD peut sembler complexe, mais il est essentiel pour toutes les entreprises qui traitent des données personnelles. 
-                        Ce guide pratique vous explique les bases du RGPD de manière accessible, avec des exemples concrets et des actions 
-                        immédiates à mettre en place dans votre PME.
-                    </p>
-                </div>
-                <div class="blog-post-footer">
-                    <div class="blog-tags">
-                        <span class="tag">RGPD</span>
-                        <span class="tag">Compliance</span>
-                        <span class="tag">PME</span>
+                    <div class="portfolio-content">
+                        <div style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-family: 'JetBrains Mono', monospace;">15 Janvier 2024</div>
+                        <h3 class="portfolio-title">Les 5 erreurs de sécurité les plus courantes en 2024</h3>
+                        <p class="portfolio-description">Découvrez les principales failles de sécurité que nous observons chez nos clients et comment les éviter.</p>
+                        <a href="#article-1" class="btn btn-link-arrow">Lire l'article</a>
                     </div>
-                    <a href="#article-2" class="btn btn-link">Lire l'article →</a>
-                </div>
-            </article>
+                </article>
 
-            <article class="blog-post fade-in" id="article-3">
-                <div class="blog-post-header">
-                    <div class="blog-post-date">2 Janvier 2024</div>
-                    <h2 class="blog-post-title">Comment choisir un bon test d'intrusion</h2>
-                    <p class="blog-post-excerpt">
-                        Vous envisagez de faire réaliser un test d'intrusion mais ne savez pas par où commencer ? 
-                        Ce guide vous explique les critères essentiels à prendre en compte pour sélectionner un prestataire 
-                        de qualité et obtenir des résultats exploitables pour améliorer votre sécurité.
-                    </p>
-                </div>
-                <div class="blog-post-footer">
-                    <div class="blog-tags">
-                        <span class="tag">Penetration Testing</span>
-                        <span class="tag">Guide</span>
-                        <span class="tag">Sélection</span>
+                <article class="blog-post glass-card fade-in-up">
+                    <div class="portfolio-image" style="margin-bottom: 1.5rem;">
+                        <div class="portfolio-overlay"></div>
+                        <div class="portfolio-tags" style="top: 1rem; left: 1rem;">
+                            <span class="tag">RGPD</span>
+                            <span class="tag">Compliance</span>
+                        </div>
                     </div>
-                    <a href="#article-3" class="btn btn-link">Lire l'article →</a>
-                </div>
-            </article>
-
-            <article class="blog-post fade-in">
-                <div class="blog-post-header">
-                    <div class="blog-post-date">20 Décembre 2023</div>
-                    <h2 class="blog-post-title">Ransomware : Prévention et réponse</h2>
-                    <p class="blog-post-excerpt">
-                        Les attaques par ransomware continuent d'augmenter et touchent toutes les tailles d'entreprises. 
-                        Découvrez les mesures de prévention essentielles et comment réagir si votre entreprise est victime 
-                        d'une attaque, basé sur notre expérience en réponse à incident.
-                    </p>
-                </div>
-                <div class="blog-post-footer">
-                    <div class="blog-tags">
-                        <span class="tag">Ransomware</span>
-                        <span class="tag">Incident Response</span>
-                        <span class="tag">Prévention</span>
+                    <div class="portfolio-content">
+                        <div style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-family: 'JetBrains Mono', monospace;">8 Janvier 2024</div>
+                        <h3 class="portfolio-title">RGPD : Guide pratique pour les PME</h3>
+                        <p class="portfolio-description">Un guide complet pour comprendre et appliquer le RGPD dans votre entreprise sans complexité inutile.</p>
+                        <a href="#article-2" class="btn btn-link-arrow">Lire l'article</a>
                     </div>
-                    <a href="#" class="btn btn-link">Lire l'article →</a>
-                </div>
-            </article>
+                </article>
 
-            <article class="blog-post fade-in">
-                <div class="blog-post-header">
-                    <div class="blog-post-date">10 Décembre 2023</div>
-                    <h2 class="blog-post-title">Sécuriser son infrastructure cloud : Les fondamentaux</h2>
-                    <p class="blog-post-excerpt">
-                        De plus en plus d'entreprises migrent vers le cloud, mais la sécurité n'est pas automatique. 
-                        Cet article présente les fondamentaux de la sécurisation d'une infrastructure cloud, que vous utilisiez 
-                        AWS, Azure ou Google Cloud Platform.
-                    </p>
-                </div>
-                <div class="blog-post-footer">
-                    <div class="blog-tags">
-                        <span class="tag">Cloud</span>
-                        <span class="tag">Infrastructure</span>
-                        <span class="tag">AWS</span>
+                <article class="blog-post glass-card fade-in-up">
+                    <div class="portfolio-image" style="margin-bottom: 1.5rem;">
+                        <div class="portfolio-overlay"></div>
+                        <div class="portfolio-tags" style="top: 1rem; left: 1rem;">
+                            <span class="tag">Penetration Testing</span>
+                            <span class="tag">Guide</span>
+                        </div>
                     </div>
-                    <a href="#" class="btn btn-link">Lire l'article →</a>
-                </div>
-            </article>
-
-            <article class="blog-post fade-in">
-                <div class="blog-post-header">
-                    <div class="blog-post-date">28 Novembre 2023</div>
-                    <h2 class="blog-post-title">Formation cybersécurité : Investir dans vos équipes</h2>
-                    <p class="blog-post-excerpt">
-                        La technologie seule ne suffit pas à protéger une entreprise. La formation de vos équipes est un investissement 
-                        essentiel en cybersécurité. Découvrez pourquoi et comment mettre en place un programme de sensibilisation efficace 
-                        dans votre organisation.
-                    </p>
-                </div>
-                <div class="blog-post-footer">
-                    <div class="blog-tags">
-                        <span class="tag">Formation</span>
-                        <span class="tag">Sensibilisation</span>
-                        <span class="tag">Ressources Humaines</span>
+                    <div class="portfolio-content">
+                        <div style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-family: 'JetBrains Mono', monospace;">2 Janvier 2024</div>
+                        <h3 class="portfolio-title">Comment choisir un bon test d'intrusion</h3>
+                        <p class="portfolio-description">Les critères à prendre en compte pour sélectionner un prestataire de tests d'intrusion de qualité.</p>
+                        <a href="#article-3" class="btn btn-link-arrow">Lire l'article</a>
                     </div>
-                    <a href="#" class="btn btn-link">Lire l'article →</a>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section class="final-cta">
-        <div class="container">
-            <div class="cta-content fade-in">
-                <h2 class="cta-title">Besoin d'un conseil personnalisé ?</h2>
-                <p class="cta-subtitle">Contactez-nous pour discuter de vos besoins en cybersécurité.</p>
-                <a href="/contact.html" class="btn btn-secondary btn-large">Nous contacter</a>
+                </article>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 class="footer-title">NZR Labs</h3>
+                    <h3 class="footer-title">
+                        <span class="logo-gradient">NZR</span> Labs
+                    </h3>
                     <p class="footer-text">Cabinet de conseil en cybersécurité pour PME et startups.</p>
                 </div>
                 <div class="footer-section">
@@ -200,7 +151,6 @@
                         <li><a href="/services.html#compliance">Audits de conformité</a></li>
                         <li><a href="/services.html#incident-response">Réponse à incident</a></li>
                         <li><a href="/services.html#security-training">Formation</a></li>
-                        <li><a href="/services.html#consulting">Conseil stratégique</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -220,4 +170,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
