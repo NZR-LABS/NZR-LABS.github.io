@@ -302,6 +302,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     inset: 0;
     z-index: 0;
+    overflow: hidden;
 }
 
 .gradient-blob {
@@ -1007,5 +1008,17 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-cta .btn {
         width: 100%;
+    }
+    
+    .hero-background {
+        overflow: hidden;
+    }
+    
+    .gradient-blob {
+        will-change: transform;
+    }
+    
+    .blob-2 {
+        bottom: -200px;
     }
 }
