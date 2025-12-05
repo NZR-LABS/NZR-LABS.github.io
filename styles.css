@@ -49,6 +49,11 @@ html {
     scroll-padding-top: 100px;
 }
 
+/* Ensure target elements are visible */
+[id] {
+    scroll-margin-top: 100px;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: var(--bg-dark);
