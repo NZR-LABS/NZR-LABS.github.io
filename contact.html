@@ -16,7 +16,7 @@
         <nav class="nav container">
             <div class="nav-brand">
                 <a href="/" class="logo">
-                    <span class="logo-gradient">NZR</span> Labs
+                    <img src="logo_nzrlabs.png" alt="NZR Labs" style="height: 40px; width: auto;">
                 </a>
             </div>
             <button class="nav-toggle" aria-label="Menu" aria-expanded="false" id="navToggle">
@@ -28,7 +28,6 @@
                 <li><a href="/" class="nav-link">Accueil</a></li>
                 <li><a href="/services.html" class="nav-link">Services</a></li>
                 <li><a href="/portfolio.html" class="nav-link">Portfolio</a></li>
-                <li><a href="/blog.html" class="nav-link">Blog</a></li>
                 <li><a href="/about.html" class="nav-link">À propos</a></li>
                 <li><a href="/contact.html" class="btn btn-primary-nav">Contact</a></li>
             </ul>
@@ -71,7 +70,7 @@
     <!-- Contact Section -->
     <section class="services-section">
         <div class="container">
-            <div class="contact-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto;">
+            <div class="contact-container" style="max-width: 600px; margin: 0 auto;">
                 <!-- Contact Info -->
                 <div class="contact-info glass-card fade-in-up" style="padding: 2rem;">
                     <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text-primary);">Nos coordonnées</h3>
@@ -93,52 +92,6 @@
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <form class="contact-form glass-card fade-in-up" id="contactForm" style="padding: 2rem;" novalidate>
-                    <div class="form-success" id="formSuccess" style="display: none; background: var(--secondary); color: var(--text-primary); padding: 1rem; border-radius: 0.75rem; margin-bottom: 1rem;">
-                        Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Nom complet *</label>
-                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-family: inherit; transition: var(--transition);">
-                        <span class="form-error" style="display: none; color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem;">Le nom est requis</span>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Email *</label>
-                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-family: inherit; transition: var(--transition);">
-                        <span class="form-error" style="display: none; color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem;">Une adresse email valide est requise</span>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="company" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Entreprise</label>
-                        <input type="text" id="company" name="company" style="width: 100%; padding: 0.75rem; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-family: inherit; transition: var(--transition);">
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="service" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Service concerné</label>
-                        <select id="service" name="service" style="width: 100%; padding: 0.75rem; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-family: inherit; transition: var(--transition);">
-                            <option value="">Sélectionnez un service</option>
-                            <option value="penetration-testing">Tests d'intrusion</option>
-                            <option value="compliance">Audits de conformité</option>
-                            <option value="incident-response">Réponse à incident</option>
-                            <option value="security-training">Formation</option>
-                            <option value="consulting">Conseil stratégique</option>
-                            <option value="other">Autre</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Message *</label>
-                        <textarea id="message" name="message" required style="width: 100%; padding: 0.75rem; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-family: inherit; min-height: 150px; resize: vertical; transition: var(--transition);"></textarea>
-                        <span class="form-error" style="display: none; color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem;">Le message est requis</span>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">
-                        Envoyer le message
-                    </button>
-                </form>
             </div>
         </div>
     </section>
@@ -159,7 +112,6 @@
                         <li><a href="/">Accueil</a></li>
                         <li><a href="/services.html">Services</a></li>
                         <li><a href="/portfolio.html">Portfolio</a></li>
-                        <li><a href="/blog.html">Blog</a></li>
                         <li><a href="/about.html">À propos</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
@@ -188,90 +140,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Form validation and submission
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contactForm');
-            const formSuccess = document.getElementById('formSuccess');
-
-            form?.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Reset previous errors
-                const formGroups = form.querySelectorAll('.form-group');
-                formGroups.forEach(group => {
-                    group.classList.remove('error');
-                    const error = group.querySelector('.form-error');
-                    if (error) error.style.display = 'none';
-                    const input = group.querySelector('input, textarea, select');
-                    if (input) input.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                });
-
-                let isValid = true;
-
-                // Validate name
-                const name = document.getElementById('name');
-                if (!name.value.trim()) {
-                    name.closest('.form-group').classList.add('error');
-                    name.closest('.form-group').querySelector('.form-error').style.display = 'block';
-                    name.style.borderColor = '#ef4444';
-                    isValid = false;
-                }
-
-                // Validate email
-                const email = document.getElementById('email');
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!email.value.trim() || !emailRegex.test(email.value)) {
-                    email.closest('.form-group').classList.add('error');
-                    email.closest('.form-group').querySelector('.form-error').style.display = 'block';
-                    email.style.borderColor = '#ef4444';
-                    isValid = false;
-                }
-
-                // Validate message
-                const message = document.getElementById('message');
-                if (!message.value.trim()) {
-                    message.closest('.form-group').classList.add('error');
-                    message.closest('.form-group').querySelector('.form-error').style.display = 'block';
-                    message.style.borderColor = '#ef4444';
-                    isValid = false;
-                }
-
-                if (isValid) {
-                    // In a real implementation, you would send the form data to a server
-                    formSuccess.style.display = 'block';
-                    form.reset();
-                    
-                    // Scroll to success message
-                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    
-                    // Hide success message after 5 seconds
-                    setTimeout(() => {
-                        formSuccess.style.display = 'none';
-                    }, 5000);
-                } else {
-                    // Scroll to first error
-                    const firstError = form.querySelector('.form-group.error');
-                    if (firstError) {
-                        firstError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }
-                }
-            });
-
-            // Focus styles
-            const inputs = form.querySelectorAll('input, textarea, select');
-            inputs.forEach(input => {
-                input.addEventListener('focus', function() {
-                    this.style.borderColor = 'var(--primary)';
-                    this.style.outline = 'none';
-                });
-                input.addEventListener('blur', function() {
-                    if (!this.closest('.form-group').classList.contains('error')) {
-                        this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
