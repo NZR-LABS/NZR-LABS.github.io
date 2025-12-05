@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez NZR Labs pour discuter de vos besoins en cybersécurité. Formulaire de contact et coordonnées.">
+    <title>Contact - NZR Labs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <a href="/" class="logo">
+                    <span class="logo-gradient">NZR</span> Labs
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                <li><a href="/services.html" class="nav-link">Services</a></li>
+                <li><a href="/portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="/blog.html" class="nav-link">Blog</a></li>
+                <li><a href="/about.html" class="nav-link">À propos</a></li>
+                <li><a href="/contact.html" class="btn btn-primary-nav">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="grid-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Contactez-nous</span>
+                </h1>
+                <p class="hero-subtitle">Discutons de votre projet en cybersécurité</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="contact-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto;">
+                <!-- Contact Info -->
+                <div class="contact-info glass-card fade-in-up" style="padding: 2rem;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text-primary);">Nos coordonnées</h3>
+                    <div style="margin-bottom: 2rem;">
+                        <strong style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">Email</strong>
+                        <a href="mailto:contact@nzr-labs.fr" style="color: var(--primary-light); text-decoration: none;">contact@nzr-labs.fr</a>
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <strong style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">Téléphone</strong>
+                        <a href="tel:+33123456789" style="color: var(--primary-light); text-decoration: none;">+33 1 23 45 67 89</a>
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <strong style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">Horaires</strong>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">Lundi - Vendredi : 9h - 18h<br>Urgences : 24/7</p>
+                    </div>
+                    <div>
+                        <strong style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">Réponse</strong>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">Nous répondons généralement sous 24h aux demandes de contact. Pour les urgences, contactez-nous directement par téléphone.</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="contact-form glass-card fade-in-up" id="contactForm" style="padding: 2rem;" novalidate>
+                    <div class="form-success" id="formSuccess" style="display: none; background: var(--secondary); color: var(--text-primary); padding: 1rem; border-radius: 0.75rem; margin-bottom: 1rem;">
+                        Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Nom complet *</label>
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-family: inherit; transition: var(--transition);">
+                        <span class="form-error" style="display: none; color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem;">Le nom est requis</span>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Email *</label>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-family: inherit; transition: var(--transition);">
+                        <span class="form-error" style="display: none; color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem;">Une adresse email valide est requise</span>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="company" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Entreprise</label>
+                        <input type="text" id="company" name="company" style="width: 100%; padding: 0.75rem; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-family: inherit; transition: var(--transition);">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="service" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Service concerné</label>
+                        <select id="service" name="service" style="width: 100%; padding: 0.75rem; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-family: inherit; transition: var(--transition);">
+                            <option value="">Sélectionnez un service</option>
+                            <option value="penetration-testing">Tests d'intrusion</option>
+                            <option value="compliance">Audits de conformité</option>
+                            <option value="incident-response">Réponse à incident</option>
+                            <option value="security-training">Formation</option>
+                            <option value="consulting">Conseil stratégique</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Message *</label>
+                        <textarea id="message" name="message" required style="width: 100%; padding: 0.75rem; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 0.5rem; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-family: inherit; min-height: 150px; resize: vertical; transition: var(--transition);"></textarea>
+                        <span class="form-error" style="display: none; color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem;">Le message est requis</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Envoyer le message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="logo-gradient">NZR</span> Labs
+                    </h3>
+                    <p class="footer-text">Cabinet de conseil en cybersécurité pour PME et startups.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/about.html">À propos</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services.html#penetration-testing">Tests d'intrusion</a></li>
+                        <li><a href="/services.html#compliance">Audits de conformité</a></li>
+                        <li><a href="/services.html#incident-response">Réponse à incident</a></li>
+                        <li><a href="/services.html#security-training">Formation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@nzr-labs.fr">contact@nzr-labs.fr</a></li>
+                        <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NZR Labs. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Form validation and submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+
+            form?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset previous errors
+                const formGroups = form.querySelectorAll('.form-group');
+                formGroups.forEach(group => {
+                    group.classList.remove('error');
+                    const error = group.querySelector('.form-error');
+                    if (error) error.style.display = 'none';
+                    const input = group.querySelector('input, textarea, select');
+                    if (input) input.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                });
+
+                let isValid = true;
+
+                // Validate name
+                const name = document.getElementById('name');
+                if (!name.value.trim()) {
+                    name.closest('.form-group').classList.add('error');
+                    name.closest('.form-group').querySelector('.form-error').style.display = 'block';
+                    name.style.borderColor = '#ef4444';
+                    isValid = false;
+                }
+
+                // Validate email
+                const email = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email.value.trim() || !emailRegex.test(email.value)) {
+                    email.closest('.form-group').classList.add('error');
+                    email.closest('.form-group').querySelector('.form-error').style.display = 'block';
+                    email.style.borderColor = '#ef4444';
+                    isValid = false;
+                }
+
+                // Validate message
+                const message = document.getElementById('message');
+                if (!message.value.trim()) {
+                    message.closest('.form-group').classList.add('error');
+                    message.closest('.form-group').querySelector('.form-error').style.display = 'block';
+                    message.style.borderColor = '#ef4444';
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    // In a real implementation, you would send the form data to a server
+                    formSuccess.style.display = 'block';
+                    form.reset();
+                    
+                    // Scroll to success message
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        formSuccess.style.display = 'none';
+                    }, 5000);
+                } else {
+                    // Scroll to first error
+                    const firstError = form.querySelector('.form-group.error');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }
+            });
+
+            // Focus styles
+            const inputs = form.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.borderColor = 'var(--primary)';
+                    this.style.outline = 'none';
+                });
+                input.addEventListener('blur', function() {
+                    if (!this.closest('.form-group').classList.contains('error')) {
+                        this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

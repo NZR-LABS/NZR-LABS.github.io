@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio NZR Labs - Découvrez nos réalisations en cybersécurité : tests d'intrusion, audits, réponse à incident.">
+    <title>Portfolio - NZR Labs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <a href="/" class="logo">
+                    <span class="logo-gradient">NZR</span> Labs
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                <li><a href="/services.html" class="nav-link">Services</a></li>
+                <li><a href="/portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="/blog.html" class="nav-link">Blog</a></li>
+                <li><a href="/about.html" class="nav-link">À propos</a></li>
+                <li><a href="/contact.html" class="btn btn-primary-nav">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="grid-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Nos réalisations</span>
+                </h1>
+                <p class="hero-subtitle">Découvrez quelques-uns de nos projets en cybersécurité</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="portfolio-filters" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem;">
+                <button class="filter-btn active" data-filter="all" style="padding: 0.5rem 1.5rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 2rem; cursor: pointer; color: var(--text-primary); transition: var(--transition);">Tous</button>
+                <button class="filter-btn" data-filter="web" style="padding: 0.5rem 1.5rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 2rem; cursor: pointer; color: var(--text-secondary); transition: var(--transition);">Web</button>
+                <button class="filter-btn" data-filter="infra" style="padding: 0.5rem 1.5rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 2rem; cursor: pointer; color: var(--text-secondary); transition: var(--transition);">Infra</button>
+                <button class="filter-btn" data-filter="cloud" style="padding: 0.5rem 1.5rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 2rem; cursor: pointer; color: var(--text-secondary); transition: var(--transition);">Cloud</button>
+                <button class="filter-btn" data-filter="dfir" style="padding: 0.5rem 1.5rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 2rem; cursor: pointer; color: var(--text-secondary); transition: var(--transition);">DFIR</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-card glass-card fade-in-up" data-tags="web infra">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay"></div>
+                        <div class="portfolio-tags">
+                            <span class="tag">Web</span>
+                            <span class="tag">Infra</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Audit sécurité application bancaire</h3>
+                        <p class="portfolio-description">Test d'intrusion complet d'une application web critique pour une banque régionale.</p>
+                        <div class="portfolio-metrics">
+                            <span>3 semaines</span>
+                            <span>12 vulns trouvées</span>
+                        </div>
+                        <a href="#project-1" class="btn btn-link-arrow">Voir writeup</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card glass-card fade-in-up" data-tags="cloud compliance">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay"></div>
+                        <div class="portfolio-tags">
+                            <span class="tag">Cloud</span>
+                            <span class="tag">Compliance</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Conformité RGPD startup tech</h3>
+                        <p class="portfolio-description">Audit complet et mise en conformité RGPD pour une startup en croissance.</p>
+                        <div class="portfolio-metrics">
+                            <span>2 semaines</span>
+                            <span>Conformité obtenue</span>
+                        </div>
+                        <a href="#project-2" class="btn btn-link-arrow">Voir writeup</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card glass-card fade-in-up" data-tags="dfir incident">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay"></div>
+                        <div class="portfolio-tags">
+                            <span class="tag">DFIR</span>
+                            <span class="tag">Incident</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Réponse à incident industriel</h3>
+                        <p class="portfolio-description">Investigation et remédiation suite à une attaque ransomware sur un site industriel.</p>
+                        <div class="portfolio-metrics">
+                            <span>48h</span>
+                            <span>Systèmes restaurés</span>
+                        </div>
+                        <a href="#project-3" class="btn btn-link-arrow">Voir writeup</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="logo-gradient">NZR</span> Labs
+                    </h3>
+                    <p class="footer-text">Cabinet de conseil en cybersécurité pour PME et startups.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/about.html">À propos</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services.html#penetration-testing">Tests d'intrusion</a></li>
+                        <li><a href="/services.html#compliance">Audits de conformité</a></li>
+                        <li><a href="/services.html#incident-response">Réponse à incident</a></li>
+                        <li><a href="/services.html#security-training">Formation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@nzr-labs.fr">contact@nzr-labs.fr</a></li>
+                        <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NZR Labs. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Portfolio filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.style.background = 'rgba(255, 255, 255, 0.1)';
+                        btn.style.color = 'var(--text-secondary)';
+                    });
+                    this.classList.add('active');
+                    this.style.background = 'linear-gradient(135deg, var(--primary), var(--primary-light))';
+                    this.style.color = 'var(--text-primary)';
+                    
+                    // Filter cards
+                    portfolioCards.forEach(card => {
+                        const tags = card.getAttribute('data-tags');
+                        if (filter === 'all' || tags.includes(filter)) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
