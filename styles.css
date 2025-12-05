@@ -61,6 +61,7 @@ body {
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1019,6 +1020,21 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .blob-2 {
-        bottom: -200px;
+        bottom: -250px;
+        right: -200px;
+    }
+    
+    .blob-1 {
+        top: -250px;
+        left: -250px;
+    }
+    
+    .blob-3 {
+        display: none;
+    }
+    
+    .hero {
+        overflow: hidden;
+        position: relative;
     }
 }

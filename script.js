@@ -66,12 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Smooth scroll for anchor links (only for same-page anchors)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Only intercept links that are pure hash links (same page)
+    document.querySelectorAll('a[href]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            // Only handle links that start with # (same page anchors)
-            if (href && href !== '#' && href.startsWith('#')) {
+            // Only handle links that start with # and nothing before it (same page anchors)
+            // Ignore links that have a path before the hash (like /services.html#section)
+            if (href && href.startsWith('#') && href.length > 1) {
+                // This is a same-page anchor, handle smooth scroll
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
@@ -87,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             }
+            // For all other links (including /services.html#section), let browser handle normally
         });
     });
     
