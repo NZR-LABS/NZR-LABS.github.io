@@ -2,15 +2,33 @@
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
+
+    document.getElementById('year').textContent = new Date().getFullYear();
     
     // Check for saved theme preference or default to light
     const savedTheme = localStorage.getItem('theme') || 'light';
     html.classList.toggle('dark', savedTheme === 'dark');
     
+    // Update logo on theme change
+    function updateLogo() {
+        const isDark = html.classList.contains('dark');
+        const logoDark = document.querySelector('.logo .logo-dark');
+        const logoLight = document.querySelector('.logo .logo-light');
+        
+        if (logoDark && logoLight) {
+            logoDark.style.display = isDark ? 'none' : 'block';
+            logoLight.style.display = isDark ? 'block' : 'none';
+        }
+    }
+    
+    // Initial logo update
+    updateLogo();
+    
     themeToggle?.addEventListener('click', function() {
         html.classList.toggle('dark');
         const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
         localStorage.setItem('theme', currentTheme);
+        updateLogo();
     });
     
     // Mobile Navigation Toggle

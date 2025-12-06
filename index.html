@@ -19,7 +19,8 @@
         <nav class="nav container">
             <div class="nav-brand">
                 <a href="/" class="logo">
-                    <img src="logo_nzrlabs.png" alt="NZR Labs" style="height: 40px; width: auto;">
+                    <img src="logo_nzrlabs.svg" alt="NZR Labs" class="logo-dark" style="height: 80px; width: auto;">
+                    <img src="logo_nzrlabs_white.svg" alt="NZR Labs" class="logo-light" style="height: 80px; width: auto;">
                 </a>
             </div>
             <button class="nav-toggle" aria-label="Menu" aria-expanded="false" id="navToggle">
@@ -323,7 +324,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3 class="footer-title">
-                        <span class="logo-gradient">NZR</span> Labs
+                        <a href="/" class="logo">
+                            <img src="logo_nzrlabs.svg" alt="NZR Labs" class="logo-dark" style="height: 80px; width: auto;">
+                            <img src="logo_nzrlabs_white.svg" alt="NZR Labs" class="logo-light" style="height: 80px; width: auto;">
+                        </a>
                     </h3>
                     <p class="footer-text">Cabinet de conseil en cybersécurité pour PME et startups.</p>
                 </div>
@@ -355,7 +359,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 NZR Labs. Tous droits réservés.</p>
+                <p>&copy; <span id="year"></span> NZR Labs. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
