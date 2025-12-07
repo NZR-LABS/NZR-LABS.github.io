@@ -16,8 +16,8 @@
         <nav class="nav container">
             <div class="nav-brand">
                 <a href="/" class="logo">
-                    <img src="logo_nzrlabs.svg" alt="NZR Labs" class="logo-dark" style="height: 80px; width: auto;">
-                    <img src="logo_nzrlabs_white.svg" alt="NZR Labs" class="logo-light" style="height: 80px; width: auto;">
+                    <img src="logo_nzrlabs.svg" alt="NZR Labs" class="logo-dark" style="height: 65px; width: auto;">
+                    <img src="logo_nzrlabs_white.svg" alt="NZR Labs" class="logo-light" style="height: 65px; width: auto;">
                 </a>
             </div>
             <button class="nav-toggle" aria-label="Menu" aria-expanded="false" id="navToggle">
@@ -68,34 +68,88 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="services-section">
-        <div class="container">
-            <div class="contact-container" style="max-width: 600px; margin: 0 auto;">
-                <!-- Contact Info -->
-                <div class="contact-info glass-card fade-in-up" style="padding: 2rem;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text-primary);">Nos coordonnées</h3>
-                    <div style="margin-bottom: 2rem;">
-                        <strong style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">Email</strong>
-                        <a href="mailto:contact@nzr-labs.fr" style="color: var(--primary-light); text-decoration: none;">contact@nzr-labs.fr</a>
+<!-- Contact Section -->
+<section class="services-section">
+    <div class="container">
+        <div class="contact-page-wrapper">
+            <!-- Contact Info Card -->
+            <div class="contact-info-card glass-card fade-in-up">
+                <div class="contact-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="contact-card-title">Nos coordonnées</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
                     </div>
-                    <div style="margin-bottom: 2rem;">
-                        <strong style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">Téléphone</strong>
-                        <a href="tel:+33123456789" style="color: var(--primary-light); text-decoration: none;">+33 1 23 45 67 89</a>
-                    </div>
-                    <div style="margin-bottom: 2rem;">
-                        <strong style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">Horaires</strong>
-                        <p style="color: var(--text-secondary); line-height: 1.8;">Lundi - Vendredi : 9h - 18h<br>Urgences : 24/7</p>
-                    </div>
-                    <div>
-                        <strong style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">Réponse</strong>
-                        <p style="color: var(--text-secondary); line-height: 1.8;">Nous répondons généralement sous 24h aux demandes de contact. Pour les urgences, contactez-nous directement par téléphone.</p>
+                    <div class="contact-item-content">
+                        <strong>Email</strong>
+                        <a href="mailto:contact@nzrlabs.com">contact[at]nzrlabs[dot]com</a>
                     </div>
                 </div>
 
+                <div class="contact-item">
+                    <div class="contact-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </div>
+                    <div class="contact-item-content">
+                        <strong>LinkedIn</strong>
+                        <a href="https://www.linkedin.com/company/nzr-labs/" target="_blank" rel="noopener noreferrer">NZR Labs</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0110 0v4"/>
+                        </svg>
+                    </div>
+                    <div class="contact-item-content">
+                        <strong>Clé PGP publique</strong>
+                        <div class="pgp-links">
+                            <a href="/.well-known/pgp-key.txt" download>Télécharger la clé</a>
+                            <span class="pgp-separator">•</span>
+                            <a href="/.well-known/pgp-key.txt" target="_blank">Voir en ligne</a>
+                        </div>
+                        <p class="pgp-fingerprint">Fingerprint : <br> <code>A983 7249 4D5F 59E5 CA0C  3F89 CB96 0B42 8356 F7B4</code></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <div class="contact-item-content">
+                        <strong>Réponse</strong>
+                        <p>Nous répondons généralement sous 24h aux demandes de contact.</p>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <a href="https://www.linkedin.com/company/nzr-labs/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; margin-right: 0.5rem;">
+                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                        Nous suivre sur LinkedIn
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -104,8 +158,8 @@
                 <div class="footer-section">
                     <h3 class="footer-title">
                         <a href="/" class="logo">
-                            <img src="logo_nzrlabs.svg" alt="NZR Labs" class="logo-dark" style="height: 80px; width: auto;">
-                            <img src="logo_nzrlabs_white.svg" alt="NZR Labs" class="logo-light" style="height: 80px; width: auto;">
+                            <img src="logo_nzrlabs.svg" alt="NZR Labs" class="logo-dark" style="height: 65px; width: auto;">
+                            <img src="logo_nzrlabs_white.svg" alt="NZR Labs" class="logo-light" style="height: 65px; width: auto;">
                         </a>
                     </h3>
                     <p class="footer-text">Cabinet de conseil en cybersécurité pour PME et startups.</p>
@@ -132,13 +186,14 @@
                 <div class="footer-section">
                     <h4 class="footer-heading">Contact</h4>
                     <ul class="footer-links">
-                        <li><a href="mailto:contact@nzr-labs.fr">contact@nzr-labs.fr</a></li>
-                        <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                        <li><a href="mailto:contact@nzrlabs.com">Mail</a></li>
+                        <li><a href="https://www.linkedin.com/company/nzr-labs/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="/.well-known/pgp-key.txt" target="_blank">Clé PGP</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 NZR Labs. Tous droits réservés.</p>
+                <p>&copy; <span id="year"></span> NZR Labs. Tous droits réservés.</p>
             </div>
         </div>
     </footer>

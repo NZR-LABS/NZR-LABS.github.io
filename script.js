@@ -7,27 +7,47 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check for saved theme preference or default to light
     const savedTheme = localStorage.getItem('theme') || 'light';
-    html.classList.toggle('dark', savedTheme === 'dark');
+    
+    // Ensure we start with light mode (remove any existing dark class)
+    html.classList.remove('dark');
+    
+    // Apply the saved theme - only add 'dark' class if saved theme is 'dark'
+    // Otherwise, default to light mode (no class needed)
+    if (savedTheme === 'dark') {
+        html.classList.add('dark');
+    }
     
     // Update logo on theme change
     function updateLogo() {
         const isDark = html.classList.contains('dark');
-        const logoDark = document.querySelector('.logo .logo-dark');
-        const logoLight = document.querySelector('.logo .logo-light');
+        const allLogoDarks = document.querySelectorAll('.logo .logo-dark');
+        const allLogoLights = document.querySelectorAll('.logo .logo-light');
         
-        if (logoDark && logoLight) {
-            logoDark.style.display = isDark ? 'none' : 'block';
-            logoLight.style.display = isDark ? 'block' : 'none';
-        }
+        allLogoDarks.forEach(logo => {
+            logo.style.display = isDark ? 'none' : 'block';
+        });
+        
+        allLogoLights.forEach(logo => {
+            logo.style.display = isDark ? 'block' : 'none';
+        });
     }
     
     // Initial logo update
     updateLogo();
     
     themeToggle?.addEventListener('click', function() {
-        html.classList.toggle('dark');
-        const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
-        localStorage.setItem('theme', currentTheme);
+        const isCurrentlyDark = html.classList.contains('dark');
+        
+        if (isCurrentlyDark) {
+            // Switch to light mode
+            html.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        } else {
+            // Switch to dark mode
+            html.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        }
+        
         updateLogo();
     });
     
